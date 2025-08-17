@@ -1,0 +1,5 @@
+(define (problem auto-generated)
+(:domain barman)
+(:init)
+(:goal (and (contains shot1 cocktail1)))
+)

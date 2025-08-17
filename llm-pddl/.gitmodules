@@ -1,0 +1,18 @@
+[submodule "downward"]
+	path = downward
+	url = https://github.com/aibasel/downward.git
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Planner/outputs (adjust to your project)
+experiments/
+plans/
+results/
+
+# OS clutter
+.DS_Store
+Thumbs.db

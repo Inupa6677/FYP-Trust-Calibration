@@ -1,0 +1,45 @@
+Type-checking grasp
+...action passes type checking.
+Type-checking leave
+...action passes type checking.
+Type-checking fill-shot
+...action passes type checking.
+Type-checking refill-shot
+...action passes type checking.
+Type-checking empty-shot
+...action passes type checking.
+Type-checking clean-shot
+...action passes type checking.
+Type-checking pour-shot-to-clean-shaker
+...action passes type checking.
+Type-checking pour-shot-to-used-shaker
+...action passes type checking.
+Type-checking empty-shaker
+...action passes type checking.
+Type-checking clean-shaker
+...action passes type checking.
+Type-checking shake
+...action passes type checking.
+Type-checking pour-shaker-to-shot
+...action passes type checking.
+Checking plan: experiments/run0/plans/p01.pddl
+Plan to validate:
+
+Plan size: 0
+
+Plan executed successfully - checking goal
+Goal not satisfied
+Plan invalid
+
+Plan Repair Advice:
+
+The goal is not satisfied
+(Follow each of:
+    (Set (contains shot1 cocktail1) to true)
+    and (Set (contains shot2 cocktail3) to true)
+    and (Set (contains shot3 cocktail2) to true)
+)
+
+
+Failed plans:
+ experiments/run0/plans/p01.pddl 

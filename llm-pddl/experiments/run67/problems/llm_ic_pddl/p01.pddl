@@ -10,38 +10,29 @@
     cocktail1 - cocktail
   )
   (:init
-    ;; containers on the table
     (ontable shaker1)
     (ontable shot1)
     (ontable shot2)
 
-    ;; hands are empty
     (handempty left)
     (handempty right)
 
-    ;; containers are clean & empty
     (clean shaker1) (empty shaker1)
-    (clean shot1) (empty shot1)
-    (clean shot2) (empty shot2)
+    (clean shot1)   (empty shot1)
+    (clean shot2)   (empty shot2)
 
-    ;; shaker levels
     (shaker-empty-level shaker1 l0)
     (shaker-level shaker1 l0)
     (next l0 l1)
     (next l1 l2)
 
-    ;; shaker not yet shaken
     (unshaked shaker1)
 
-    ;; dispensers and ingredients
     (dispenses dispenser1 ingredient1)
     (dispenses dispenser2 ingredient2)
 
-    ;; cocktail recipe: cocktail1 = ingredient1 + ingredient2
     (cocktail-part1 cocktail1 ingredient1)
     (cocktail-part2 cocktail1 ingredient2)
   )
-  (:goal (and
-    (contains shot1 cocktail1)
-  ))
+  (:goal (and (contains shot1 cocktail1)))
 )

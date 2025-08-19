@@ -322,7 +322,7 @@ class Planner:
     def query(self, prompt_text):
         print("[INFO] Using Ollama locally...")
         try:
-            result = ollama.generate(model="phi", prompt=prompt_text)
+            result = ollama.generate(model="codellama:7b-instruct", prompt=prompt_text)
             return result['response'].strip()
         except Exception as e:
             print("[OLLAMA ERROR]", e)

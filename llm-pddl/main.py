@@ -322,7 +322,7 @@ class Planner:
     def query(self, prompt_text):
         print("[INFO] Using Ollama locally...")
         try:
-            result = ollama.generate(model="deepseek-coder:6.7b-instruct", prompt=prompt_text)
+            result = ollama.generate(model="starcoder:7b", prompt=prompt_text)
             return result['response'].strip()
         except Exception as e:
             print("[OLLAMA ERROR]", e)

@@ -309,20 +309,40 @@ class Planner:
         return prompt
 
     def create_llm_ic_pddl_prompt(self, task_nl, domain_pddl, context):
-        # our method (LM+P), create the problem PDDL given the context
         context_nl, context_pddl, context_sol = context
-        prompt = f"I want you to solve planning problems. " + \
-                 f"An example planning problem is: \n {context_nl} \n" + \
-                 f"The problem PDDL file to this problem is: \n {context_pddl} \n" + \
-                 f"Now I have a new planning problem and its description is: \n {task_nl} \n" + \
-                 f"Provide me with the problem PDDL file that describes " + \
-                 f"the new planning problem directly without further explanations? Only return the PDDL file. Do not return anything else."
+        example = """
+    (define (problem example-problem)
+    (:domain barman)
+    (:objects shot1 cocktail1 shaker1)
+    (:init
+        (empty shot1)
+        (clean shaker1)
+    )
+    (:goal
+        (contains shot1 cocktail1)
+    )
+    )
+    """
+        prompt = f"You are an AI agent that writes PDDL problem files.\n\n" + \
+                f"Here is the domain file:\n{domain_pddl}\n\n" + \
+                f"The new planning task is:\n{task_nl}\n\n" + \
+                f"Please output a valid PDDL problem file with the following parts:\n" + \
+                f"- A meaningful `:objects` section\n" + \
+                f"- A non-empty `:init` section (at least 2 facts)\n" + \
+                f"- A clear `:goal` section\n\n" + \
+                f"Format strictly as shown in this example:\n{example}\n" + \
+                f"Only return the complete PDDL problem file. Do NOT return any explanations, markdown, or comments."
         return prompt
+
 
     def query(self, prompt_text):
         print("[INFO] Using Ollama locally...")
         try:
-            result = ollama.generate(model="starcoder:7b", prompt=prompt_text)
+            result = ollama.generate(
+                model="llama2:7b",
+                prompt=prompt_text,
+                options={"temperature": 0.7, "top_p": 0.2, "num_ctx": 4096}
+            )
             return result['response'].strip()
         except Exception as e:
             print("[OLLAMA ERROR]", e)
@@ -407,6 +427,7 @@ def llm_ic_pddl_planner(args, planner, domain):
 
     # B. write the problem file into the problem folder
     task_pddl_file_name = f"./experiments/run{args.run}/problems/llm_ic_pddl/{task_suffix}"
+    #os.makedirs(os.path.dirname(task_pddl_file_name), exist_ok=True)
     with open(task_pddl_file_name, "w") as f:
         f.write(task_pddl_)
     time.sleep(1)

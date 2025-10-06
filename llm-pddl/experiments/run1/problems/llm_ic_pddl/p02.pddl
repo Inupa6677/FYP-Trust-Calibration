@@ -1,59 +1,46 @@
-(define (problem tireworld-9)
-(:domain tyreworld)
-(:objects
-boot - container
-jack pump wrench - tool
-wheel1 wheel2 ... wheel8 - wheel
-hub1 hub2 ... hub9 - hub
-nut1 nut2 ... nut9 - nut)
-
-(:init
-(in jack boot)
-(in pump boot)
-(in wrench boot)
-(unlocked boot)
-(closed boot)
-(intact wheel1)
-(in wheel1 boot)
-(not-inflated wheel1)
-(intact wheel2)
-(in wheel2 boot)
-(not-inflated wheel2)
-(on wheel3 hub1)
-(on-ground hub1)
-(tight nut1 hub1)
-(fastened hub1)
-(on wheel4 hub2)
-(on-ground hub2)
-(tight nut2 hub2)
-(fastened hub2)
-...
-(on wheel9 hub9)
-(on-ground hub9)
-(tight nut9 hub9)
-(fastened hub9))
-
-(:goal
-(and
-(on wheel1 hub1)
-(inflated wheel1)
-(tight nut1 hub1)
-(in wheel1 boot)
-(on wheel2 hub2)
-(inflated wheel2)
-(tight nut2 hub2)
-(in wheel2 boot)
-...
-(on wheel8 hub8)
-(inflated wheel8)
-(tight nut8 hub8)
-(in wheel8 boot)
-(on wheel9 hub9)
-(inflated wheel9)
-(tight nut9 hub9)
-(in wheel9 boot)
-(in wrench boot)
-(in jack boot)
-(in pump boot)
-(closed boot)))
-)
+(define (problem prob)
+  (:domain barman)
+  (:objects
+      shaker1 - shaker
+      left right - hand
+      shot1 shot2 shot3 - shot
+      ingredient1 ingredient2 ingredient3 - ingredient
+      cocktail1 cocktail2 cocktail3 - cocktail
+      dispenser1 dispenser2 dispenser3 - dispenser
+      l0 l1 l2 - level)
+  (:init
+  	(ontable shaker1)
+	(ontable shot1)
+	(ontable shot2)
+	(ontable shot3)
+	(dispenses dispenser1 ingredient3)
+	(dispenses dispenser2 ingredient1)
+	(dispenses dispenser3 ingredient2)
+	(clean shaker1)
+	(clean shot1)
+	(clean shot2)
+	(clean shot3)
+	(empty shaker1)
+	(empty shot1)
+	(empty shot2)
+	(empty shot3)
+	(handempty left)
+	(handempty right)
+	(shaker-empty-level shaker1 l0)
+	(shaker-level shaker1 l0)
+	(next l0 l1)
+	(next l1 l2)
+	(cocktail-part1 cocktail1 ingredient3)
+	(cocktail-part2 cocktail1 ingredient1)
+	(cocktail-part1 cocktail2 ingredient3)
+	(cocktail-part2 cocktail2 ingredient2)
+	(cocktail-part1 cocktail3 ingredient3)
+	(cocktail-part2 cocktail3 ingredient1)
+	(contains shot1 'unassigned)
+	(contains shot2 'unassigned)
+	(contains shot3 'unassigned))
+  (:goal
+  	(and
+    		(contains shot1 cocktail1)
+    		(contains shot2 cocktail3)
+    		(contains shot3 cocktail2))))

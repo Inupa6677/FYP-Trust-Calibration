@@ -310,29 +310,45 @@ class Planner:
 
     def create_llm_ic_pddl_prompt(self, task_nl, domain_pddl, context):
         context_nl, context_pddl, context_sol = context
-        example = """
-    (define (problem example-problem)
-    (:domain barman)
-    (:objects shot1 cocktail1 shaker1)
-    (:init
-        (empty shot1)
-        (clean shaker1)
-    )
-    (:goal
-        (contains shot1 cocktail1)
-    )
-    )
+
+        # Few-shot example context (from same domain)
+        example_context = f"""
+    # EXAMPLE TASK (Natural Language)
+    {context_nl.strip()}
+
+    # EXAMPLE PDDL PROBLEM
+    {context_pddl.strip()}
+    """.strip()
+
+        # Instructional prompt with sections
+        prompt = f"""You are an expert AI assistant that generates syntactically and semantically valid PDDL problem files for automated planning tasks.
+
+    ## DOMAIN DEFINITION
+    {domain_pddl.strip()}
+
+    ## TASK DESCRIPTION
+    {task_nl.strip()}
+
+    ## INSTRUCTION
+    Generate a complete and valid PDDL problem definition for the given task using the domain above. 
+    Your output **must** include:
+    - A properly named `define` block with a unique problem name.
+    - A meaningful `:objects` section listing all relevant objects.
+    - A logically complete `:init` section with at least two facts.
+    - A valid `:goal` section based on the task description.
+
+    ## EXAMPLE (Few-shot format)
+    {example_context}
+
+    ## FORMAT RULES
+    - Do NOT include comments, explanations, or markdown formatting.
+    - Do NOT describe your reasoning or repeat the input.
+    - ONLY return the raw PDDL problem file.
+
+    Your output must start with `(define (problem` and be a fully structured `.pddl` problem.
     """
-        prompt = f"You are an AI agent that writes PDDL problem files.\n\n" + \
-                f"Here is the domain file:\n{domain_pddl}\n\n" + \
-                f"The new planning task is:\n{task_nl}\n\n" + \
-                f"Please output a valid PDDL problem file with the following parts:\n" + \
-                f"- A meaningful `:objects` section\n" + \
-                f"- A non-empty `:init` section (at least 2 facts)\n" + \
-                f"- A clear `:goal` section\n\n" + \
-                f"Format strictly as shown in this example:\n{example}\n" + \
-                f"Only return the complete PDDL problem file. Do NOT return any explanations, markdown, or comments."
         return prompt
+
 
 
     def query(self, prompt_text):

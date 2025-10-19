@@ -1,58 +1,74 @@
-(define (problem tireworld-3)
-(:domain tyreworld)
+(define (problem build-blocks)
+(:domain termes)
+
 (:objects
-boot - container
-jack pump wrench - tool
-wheel1 wheel2 wheel3 - wheel
-hub1 hub2 hub3 - hub
-nut1 nut2 nut3 - nut
+    n0 - numb
+    n1 - numb
+    n2 - numb
+    n3 - numb
+    n4 - numb
+    pos-0-0 - position
+    pos-0-1 - position
+    pos-0-2 - position
+    pos-1-0 - position
+    pos-1-1 - position
+    pos-1-2 - position
+    pos-2-0 - position
+    pos-2-1 - position
+    pos-2-2 - position
+    pos-3-0 - position
+    pos-3-1 - position
 )
+
 (:init
-(in jack boot)
-(in pump boot)
-(in wrench boot)
-(unlocked boot)
-(closed boot)
-(intact wheel1)
-(in wheel1 boot)
-(not-inflated wheel1)
-(intact wheel2)
-(in wheel2 boot)
-(not-inflated wheel2)
-(intact wheel3)
-(in wheel3 boot)
-(not-inflated wheel3)
-(on wheel1 hub1)
-(on-ground hub1)
-(tight nut1 hub1)
-(fastened hub1)
-(on wheel2 hub2)
-(on-ground hub2)
-(tight nut2 hub2)
-(fastened hub2)
-(on wheel3 hub3)
-(on-ground hub3)
-(tight nut3 hub3)
-(fastened hub3)
+    (height pos-0-0 n0)
+    (height pos-0-1 n0)
+    (height pos-0-2 n0)
+    (height pos-1-0 n0)
+    (height pos-1-1 n0)
+    (height pos-1-2 n0)
+    (height pos-2-0 n0)
+    (height pos-2-1 n0)
+    (height pos-2-2 n0)
+    (at pos-2-0)
+    (IS-DEPOT pos-2-0)
+    (SUCC n1 n0)
+    (SUCC n2 n1)
+    (SUCC n3 n2)
+    (SUCC n4 n3)
+    (NEIGHBOR pos-0-0 pos-1-0)
+    (NEIGHBOR pos-0-0 pos-0-1)
+    (NEIGHBOR pos-0-1 pos-1-1)
+    (NEIGHBOR pos-0-1 pos-0-2)
+    (NEIGHBOR pos-0-2 pos-1-2)
+    (NEIGHBOR pos-0-2 pos-0-1)
+    (NEIGHBOR pos-1-0 pos-0-0)
+    (NEIGHBOR pos-1-0 pos-2-0)
+    (NEIGHBOR pos-1-0 pos-1-1)
+    (NEIGHBOR pos-1-1 pos-0-1)
+    (NEIGHBOR pos-1-1 pos-2-1)
+    (NEIGHBOR pos-1-1 pos-1-0)
+    (NEIGHBOR pos-1-1 pos-1-2)
+    (NEIGHBOR pos-1-2 pos-0-2)
+    (NEIGHBOR pos-1-2 pos-2-2)
+    (NEIGHBOR pos-1-2 pos-1-1)
+    (NEIGHBOR pos-2-0 pos-1-0)
+    (NEIGHBOR pos-2-0 pos-2-1)
+    (NEIGHBOR pos-2-1 pos-1-1)
+    (NEIGHBOR pos-2-1 pos-2-0)
+    (NEIGHBOR pos-2-1 pos-2-2)
+    (NEIGHBOR pos-2-2 pos-1-2)
+    (NEIGHBOR pos-2-2 pos-2-1)
+    (NEIGHBOR pos-3-0 pos-2-0)
+    (NEIGHBOR pos-3-0 pos-3-1)
+    (NEIGHBOR pos-3-1 pos-2-1)
+    (NEIGHBOR pos-3-1 pos-3-0)
 )
+
 (:goal
 (and
-(on wheel1 hub1)
-(inflated wheel1)
-(tight nut1 hub1)
-(in wheel1 boot)
-(on wheel2 hub2)
-(inflated wheel2)
-(tight nut2 hub2)
-(in wheel2 boot)
-(on wheel3 hub3)
-(inflated wheel3)
-(tight nut3 hub3)
-(in wheel3 boot)
-(in wrench boot)
-(in jack boot)
-(in pump boot)
-(closed boot)
+    (height pos-3-1 n4)
+    (not (has-block))
 )
 )
 )

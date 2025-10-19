@@ -1,78 +1,185 @@
-(define (problem tireworld-5)
-(:domain tyreworld)
+(define (problem grid-building)
+(:domain termes)
+
 (:objects
-boot - container
-jack pump wrench wheel nut hub - obj)
+    n0 - numb
+    n1 - numb
+    n2 - numb
+    n3 - numb
+    n4 - numb
+    n5 - numb
+    pos-0-0 - position
+    pos-0-1 - position
+    pos-0-2 - position
+    pos-1-0 - position
+    pos-1-1 - position
+    pos-1-2 - position
+    pos-2-0 - position
+    pos-2-1 - position
+    pos-2-2 - position
+)
+
 (:init
-(in jack boot)
-(in pump boot)
-(in wrench boot)
-(unlocked boot)
-(closed boot)
-(intact 1 2 3 4 5)
-(not-inflated 1 2 3 4 5)
-(have wrench)
-(in 1 boot)
-(in 2 boot)
-(in 3 boot)
-(in 4 boot)
-(in 5 boot)
-(not-inflated 1)
-(not-inflated 2)
-(not-inflated 3)
-(not-inflated 4)
-(not-inflated 5)
-(hub 1 hub2 hub3 hub4 hub5)
-(on-ground hub1)
-(on-ground hub2)
-(on-ground hub3)
-(on-ground hub4)
-(on-ground hub5)
-(tight 1 hub1)
-(tight 2 hub2)
-(tight 3 hub3)
-(tight 4 hub4)
-(tight 5 hub5)
-(fastened hub1)
-(fastened hub2)
-(fastened hub3)
-(fastened hub4)
-(fastened hub5)
-(on 1 hub1)
-(on 2 hub2)
-(on 3 hub3)
-(on 4 hub4)
-(on 5 hub5))
+    (height pos-0-0 n0)
+    (height pos-0-1 n0)
+    (height pos-0-2 n0)
+    (height pos-1-0 n0)
+    (height pos-1-1 n0)
+    (height pos-1-2 n0)
+    (height pos-2-0 n0)
+    (height pos-2-1 n0)
+    (height pos-2-2 n0)
+    (at pos-2-0)
+    (IS-DEPOT pos-2-0)
+)
+
 (:goal
-(and
-(in 1 boot)
-(in 2 boot)
-(in 3 boot)
-(in 4 boot)
-(in 5 boot)
-(closed boot)
-(not-on-ground hub1)
-(not-on-ground hub2)
-(not-on-ground hub3)
-(not-on-ground hub4)
-(not-on-ground hub5)
-(unfastened hub1)
-(unfastened hub2)
-(unfastened hub3)
-(unfastened hub4)
-(unfastened hub5)
-(loose 1 hub1)
-(loose 2 hub2)
-(loose 3 hub3)
-(loose 4 hub4)
-(loose 5 hub5)
-(tight 1 hub1)
-(tight 2 hub2)
-(tight 3 hub3)
-(tight 4 hub4)
-(tight 5 hub5)
-(inflated 1)
-(inflated 2)
-(inflated 3)
-(inflated 4)
-(inflated 5))))
+    (and
+        (height pos-2-1 n5)
+        (not (has-block))
+    )
+)
+
+(:action move
+    :parameters (?from - position ?to - position ?h - numb)
+    :precondition
+    (and
+        (at ?from)
+        (NEIGHBOR ?from ?to)
+        (height ?from ?h)
+        (height ?to ?h)
+    )
+    :effect
+    (and
+        (not (at ?from))
+        (at ?to)
+    )
+)
+
+(:action move-up
+    :parameters (?from - position ?hfrom - numb ?to - position ?hto - numb)
+    :precondition
+    (and
+        (at ?from)
+        (NEIGHBOR ?from ?to)
+        (height ?from ?hfrom)
+        (height ?to ?hto)
+        (SUCC ?hto ?hfrom)
+    )
+    :effect
+    (and
+        (not (at ?from))
+        (at ?to)
+    )
+)
+
+(:action move-down
+    :parameters (?from - position ?hfrom - numb ?to - position ?hto - numb)
+    :precondition
+    (and
+        (at ?from)
+        (NEIGHBOR ?from ?to)
+        (height ?from ?hfrom)
+        (height ?to ?hto)
+        (SUCC ?hfrom ?hto)
+    )
+    :effect
+    (and
+        (not (at ?from))
+        (at ?to)
+    )
+)
+
+(:action place-block
+    :parameters (?rpos - position ?bpos - position ?hbefore - numb ?hafter - numb)
+    :precondition
+    (and
+        (at ?rpos)
+        (NEIGHBOR ?rpos ?bpos)
+        (height ?rpos ?hbefore)
+        (height ?bpos ?hbefore)
+        (SUCC ?hafter ?hbefore)
+        (has-block)
+        (not (IS-DEPOT ?bpos))
+    )
+    :effect
+    (and
+        (not (height ?bpos ?hbefore))
+        (height ?bpos ?hafter)
+        (not (has-block))
+    )
+)
+
+(:action remove-block
+    :parameters (?rpos - position ?bpos - position ?hbefore - numb ?hafter - numb)
+    :precondition
+    (and
+        (at ?rpos)
+        (NEIGHBOR ?rpos ?bpos)
+        (height ?rpos ?hafter)
+        (height ?bpos ?hbefore)
+        (SUCC ?hbefore ?hafter)
+        (not (has-block))
+    )
+    :effect
+    (and
+        (not (height ?bpos ?hbefore))
+        (height ?bpos ?hafter)
+        (has-block)
+    )
+)
+
+(:action create-block
+    :parameters (?p - position)
+    :precondition
+    (and
+        (at ?p)
+        (not (has-block))
+        (IS-DEPOT ?p)
+    )
+    :effect
+    (and
+        (has-block)
+    )
+)
+
+(:action destroy-block
+    :parameters (?p - position)
+    :precondition
+    (and
+        (at ?p)
+        (has-block)
+        (IS-DEPOT ?p)
+    )
+    :effect
+    (and
+        (not (has-block))
+    )
+)
+
+(:action build-block
+    :parameters (?pos - position)
+    :precondition
+    (and
+        (at ?pos)
+        (not (height ?pos n5))
+        (not (has-block))
+    )
+    :effect
+    (and
+        (or (height ?pos (SUCC (height ?pos)))
+            (if (= (height ?pos n4) n5)
+                (and (height ?pos n5) (not (has-block)))
+                (and (height ?pos (SUCC (height ?pos))) (has-block))))
+    )
+)
+
+(:action remove-unplaced-blocks
+    :parameters ()
+    :precondition
+    (not (has-block))
+    :effect
+    (and (not (exists (?p - position) (and (position ?p) (not (IS-DEPOT ?p)) (not (height ?p n5))))))
+)
+
+)

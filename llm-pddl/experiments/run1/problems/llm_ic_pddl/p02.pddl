@@ -1,46 +1,28 @@
-(define (problem prob)
-  (:domain barman)
-  (:objects
-      shaker1 - shaker
-      left right - hand
-      shot1 shot2 shot3 - shot
-      ingredient1 ingredient2 ingredient3 - ingredient
-      cocktail1 cocktail2 cocktail3 - cocktail
-      dispenser1 dispenser2 dispenser3 - dispenser
-      l0 l1 l2 - level)
-  (:init
-  	(ontable shaker1)
-	(ontable shot1)
-	(ontable shot2)
-	(ontable shot3)
-	(dispenses dispenser1 ingredient3)
-	(dispenses dispenser2 ingredient1)
-	(dispenses dispenser3 ingredient2)
-	(clean shaker1)
-	(clean shot1)
-	(clean shot2)
-	(clean shot3)
-	(empty shaker1)
-	(empty shot1)
-	(empty shot2)
-	(empty shot3)
-	(handempty left)
-	(handempty right)
-	(shaker-empty-level shaker1 l0)
-	(shaker-level shaker1 l0)
-	(next l0 l1)
-	(next l1 l2)
-	(cocktail-part1 cocktail1 ingredient3)
-	(cocktail-part2 cocktail1 ingredient1)
-	(cocktail-part1 cocktail2 ingredient3)
-	(cocktail-part2 cocktail2 ingredient2)
-	(cocktail-part1 cocktail3 ingredient3)
-	(cocktail-part2 cocktail3 ingredient1)
-	(contains shot1 'unassigned)
-	(contains shot2 'unassigned)
-	(contains shot3 'unassigned))
-  (:goal
-  	(and
-    		(contains shot1 cocktail1)
-    		(contains shot2 cocktail3)
-    		(contains shot3 cocktail2))))
+(define (problem grid-building)
+(:domain termes)
+
+(:objects
+    pos-0-0 pos-0-1 pos-0-2
+    pos-1-0 pos-1-1 pos-1-2
+    pos-2-0 pos-2-1 pos-2-2
+    pos-3-0 pos-3-1 pos-3-2
+)
+
+(:init
+    (at pos-2-0)
+    (IS-DEPOT pos-2-0)
+    (height pos-2-0 0)
+    (height pos-2-1 0)
+    (height pos-3-0 0)
+    (height pos-3-1 0)
+)
+
+(:goal
+    (and
+        (height pos-2-1 3)
+        (height pos-3-0 3)
+        (not (has-block))
+    )
+)
+
+)

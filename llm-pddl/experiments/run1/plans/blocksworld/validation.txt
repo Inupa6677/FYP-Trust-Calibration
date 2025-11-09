@@ -1,0 +1,263 @@
+$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p05.pddl experiments/run1/plans/llm_ic_pddl/p05.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p05.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8 
+
+Successful plans:
+Value: 8
+ experiments/run1/plans/llm_ic_pddl/p05.plan 8 
+
+
+$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p12.pddl experiments/run1/plans/llm_ic_pddl/p12.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p12.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 40 
+
+Successful plans:
+Value: 40
+ experiments/run1/plans/llm_ic_pddl/p12.plan 40 
+
+
+$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p13.pddl experiments/run1/plans/llm_ic_pddl/p13.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p13.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 32 
+
+Successful plans:
+Value: 32
+ experiments/run1/plans/llm_ic_pddl/p13.plan 32 
+
+
+$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p18.pddl experiments/run1/plans/llm_ic_pddl/p18.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p18.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 30 
+
+Successful plans:
+Value: 30
+ experiments/run1/plans/llm_ic_pddl/p18.plan 30 
+
+

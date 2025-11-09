@@ -1,28 +1,28 @@
-(define (problem grid-building)
-(:domain termes)
-
-(:objects
-    pos-0-0 pos-0-1 pos-0-2
-    pos-1-0 pos-1-1 pos-1-2
-    pos-2-0 pos-2-1 pos-2-2
-    pos-3-0 pos-3-1 pos-3-2
-)
-
+(define (problem gripper-2-3-4)
+(:domain gripper-strips)
+(:objects robot1 robot2 - robot
+rgripper1 lgripper1 rgripper2 lgripper2 - gripper
+room1 room2 room3 - room
+ball1 ball2 ball3 ball4 - object)
 (:init
-    (at pos-2-0)
-    (IS-DEPOT pos-2-0)
-    (height pos-2-0 0)
-    (height pos-2-1 0)
-    (height pos-3-0 0)
-    (height pos-3-1 0)
+(at-robby robot1 room2)
+(free robot1 rgripper1)
+(free robot1 lgripper1)
+(at-robby robot2 room3)
+(free robot2 rgripper2)
+(free robot2 lgripper2)
+(at ball1 room3)
+(at ball2 room1)
+(at ball4 room3)
+(at ball3 room1)
+(at ball4 room3)
 )
-
 (:goal
-    (and
-        (height pos-2-1 3)
-        (height pos-3-0 3)
-        (not (has-block))
-    )
+(and
+(at ball1 room2)
+(at ball2 room2)
+(at ball3 room1)
+(at ball4 room3)
 )
-
+)
 )

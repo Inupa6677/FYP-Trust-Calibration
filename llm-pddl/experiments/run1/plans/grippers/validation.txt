@@ -1,0 +1,323 @@
+$ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p02.pddl experiments/run1/plans/llm_ic_pddl/p02.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p02.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 7 
+
+Successful plans:
+Value: 7
+ experiments/run1/plans/llm_ic_pddl/p02.plan 7 
+
+
+$ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p03.pddl experiments/run1/plans/llm_ic_pddl/p03.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p03.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 4 
+
+Successful plans:
+Value: 4
+ experiments/run1/plans/llm_ic_pddl/p03.plan 4 
+
+
+$ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p04.pddl experiments/run1/plans/llm_ic_pddl/p04.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p04.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 3 
+
+Successful plans:
+Value: 3
+ experiments/run1/plans/llm_ic_pddl/p04.plan 3 
+
+
+$ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p07.pddl experiments/run1/plans/llm_ic_pddl/p07.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p07.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10 
+
+Successful plans:
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p07.plan 10 
+
+
+$ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p08.pddl experiments/run1/plans/llm_ic_pddl/p08.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p08.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 11 
+
+Successful plans:
+Value: 11
+ experiments/run1/plans/llm_ic_pddl/p08.plan 11 
+
+

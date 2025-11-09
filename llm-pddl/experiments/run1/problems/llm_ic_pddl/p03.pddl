@@ -1,25 +1,22 @@
-(define (problem storage-3)
-(:domain Storage-Propositional)
-(:objects
-	depot48-1-1 depot48-1-2 depot48-1-3 container-0-0 - storearea
-	hoist0 hoist1 hoist2 - hoist
-	crate0 - crate
-	depot48 - depot
-	loadarea - transitarea)
-
+(define (problem gripper-2-5)
+(:domain gripper-strips)
+(:objects robot1 robot2 - robot
+rgripper1 lgripper1 rgripper2 lgripper2 - gripper
+room1 room2 room3 room4 room5 - room
+ball1 ball2 - object)
 (:init
-	(connected depot48-1-1 depot48-1-2)
-	(connected depot48-1-2 depot48-1-3)
-	(in depot48-1-1 depot48)
-	(in depot48-1-2 depot48)
-	(in depot48-1-3 depot48)
-	(on crate0 container-0-0)
-	(in crate0 container0)
-	(connected loadarea container-0-0)
-	(connected loadarea depot48-1-2)
-	(at hoist0 depot48-1-2)
-	(available hoist0))
-
-(:goal (and
-	(in crate0 depot48)))
+(at-robby robot1 room1)
+(free robot1 rgripper1)
+(free robot1 lgripper1)
+(at-robby robot2 room2)
+(free robot2 rgripper2)
+(free robot2 lgripper2)
+(at ball1 room1)
+(at ball2 room1)
 )
+(:goal
+(and
+(at ball1 room5)
+(at ball2 room4)
+)
+))

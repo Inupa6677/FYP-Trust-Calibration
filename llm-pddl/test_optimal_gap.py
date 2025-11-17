@@ -100,8 +100,9 @@ def calculate_optimal_gap(generated_plan_file, domain_file, problem_file):
     if generated_cost is None:
         return None
     
-    # Generate optimal plan
-    optimal_plan_file = str(Path(generated_plan_file).parent / "optimal_plan.plan")
+    # Generate optimal plan with unique filename (based on generated plan)
+    plan_stem = Path(generated_plan_file).stem  # e.g., "p08"
+    optimal_plan_file = str(Path(generated_plan_file).parent / f"{plan_stem}_optimal.plan")
     if not get_optimal_plan(domain_file, problem_file, optimal_plan_file):
         return None
     

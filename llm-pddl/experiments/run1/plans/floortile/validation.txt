@@ -1,4 +1,220 @@
+$ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/llm_ic_pddl/p04.pddl experiments/run1/plans/llm_ic_pddl/p04.plan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p04.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 143 
+
+Successful plans:
+Value: 143
+ experiments/run1/plans/llm_ic_pddl/p04.plan 143 
+
+
 $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/llm_ic_pddl/p05.pddl experiments/run1/plans/llm_ic_pddl/p05.plan
+
+
+
+
+
+
+
+
 
 
 
@@ -132,11 +348,11 @@ $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/
 Checking plan: experiments/run1/plans/llm_ic_pddl/p05.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 142 
+Final value: 115 
 
 Successful plans:
-Value: 142
- experiments/run1/plans/llm_ic_pddl/p05.plan 142 
+Value: 115
+ experiments/run1/plans/llm_ic_pddl/p05.plan 115 
 
 
 $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/llm_ic_pddl/p07.pddl experiments/run1/plans/llm_ic_pddl/p07.plan
@@ -272,14 +488,69 @@ $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p07.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 123 
+Final value: 125 
 
 Successful plans:
-Value: 123
- experiments/run1/plans/llm_ic_pddl/p07.plan 123 
+Value: 125
+ experiments/run1/plans/llm_ic_pddl/p07.plan 125 
 
 
 $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/llm_ic_pddl/p08.pddl experiments/run1/plans/llm_ic_pddl/p08.plan
@@ -412,13 +683,72 @@ $ ./downward/validate ./domains/floortile/domain.pddl experiments/run1/problems/
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p08.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 98 
+Final value: 133 
 
 Successful plans:
-Value: 98
- experiments/run1/plans/llm_ic_pddl/p08.plan 98 
+Value: 133
+ experiments/run1/plans/llm_ic_pddl/p08.plan 133 
 
 

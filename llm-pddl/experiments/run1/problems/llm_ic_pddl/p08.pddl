@@ -1,4 +1,4 @@
-(define (problem gripper-3-5)
+(define (problem gripper-3-robots)
 (:domain gripper-strips)
 (:objects robot1 robot2 robot3 - robot
 rgripper1 lgripper1 rgripper2 lgripper2 rgripper3 lgripper3 - gripper
@@ -15,10 +15,10 @@ ball1 ball2 ball3 ball4 ball5 - object)
 (free robot3 rgripper3)
 (free robot3 lgripper3)
 (at ball1 room2)
-(at ball2 room2)
+(at ball2 room1)
 (at ball3 room1)
 (at ball4 room2)
-(at ball5 room1)
+(at ball5 room2)
 )
 (:goal
 (and
@@ -28,5 +28,4 @@ ball1 ball2 ball3 ball4 ball5 - object)
 (at ball4 room1)
 (at ball5 room1)
 )
-)
-)
+))

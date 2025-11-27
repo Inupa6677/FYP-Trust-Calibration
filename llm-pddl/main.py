@@ -386,12 +386,6 @@ class Planner:
 
         return pddl_string
 
-
-
-
-
-
-
     def plan_to_language(self, plan, task_nl, domain_nl, domain_pddl):
         domain_pddl_ = " ".join(domain_pddl.split())
         task_nl_ = " ".join(task_nl.split())

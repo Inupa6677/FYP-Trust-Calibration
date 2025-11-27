@@ -1,44 +1,22 @@
-(define (problem prob)
-  (:domain barman)
-  (:objects
-      shaker1 - shaker
-      left right - hand
-      shot1 shot2 shot3 - shot
-      ingredient1 ingredient2 ingredient3 - ingredient
-      cocktail1 cocktail2 cocktail3 - cocktail
-      dispenser1 dispenser2 dispenser3 - dispenser
-      l0 l1 l2 - level)
-  (:init
-  	(ontable shaker1)
-	(ontable shot1)
-	(ontable shot2)
-	(ontable shot3)
-	(dispenses dispenser1 ingredient1)
-	(dispenses dispenser2 ingredient2)
-	(dispenses dispenser3 ingredient3)
-	(clean shaker1)
-	(clean shot1)
-	(clean shot2)
-	(clean shot3)
-	(empty shaker1)
-	(empty shot1)
-	(empty shot2)
-	(empty shot3)
-	(handempty left)
-	(handempty right)
-	(shaker-empty-level shaker1 l0)
-	(shaker-level shaker1 l0)
-	(next l0 l1)
-	(next l1 l2)
-	(cocktail-part1 cocktail1 ingredient3)
-	(cocktail-part2 cocktail1 ingredient1)
-	(cocktail-part1 cocktail2 ingredient2)
-	(cocktail-part2 cocktail2 ingredient3)
-	(cocktail-part1 cocktail3 ingredient2)
-	(cocktail-part2 cocktail3 ingredient1)
-	(contains shot1 cocktail2))
-  (:goal
-  	(and
-     (contains shot2 cocktail1)
-     (contains shot3 cocktail3)))
+(define (problem gripper-5-rooms)
+(:domain gripper-strips)
+(:objects robot1 robot2 - robot
+rgripper1 lgripper1 rgripper2 lgripper2 - gripper
+room1 room2 room3 room4 room5 - room
+ball1 ball2 - object)
+(:init
+(at-robby robot1 room1)
+(free robot1 rgripper1)
+(free robot1 lgripper1)
+(at-robby robot2 room2)
+(free robot2 rgripper2)
+(free robot2 lgripper2)
+(at ball1 room1)
+(at ball2 room1)
+(at ball1 room5)
+(at ball2 room4))
+(:goal
+(and
+(at ball1 room5)
+(at ball2 room4)))
 )

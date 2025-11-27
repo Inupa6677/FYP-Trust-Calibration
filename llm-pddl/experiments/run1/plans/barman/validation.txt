@@ -195,9 +195,6 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p01.plan
 Plan executed successfully - checking goal
 Plan valid
@@ -406,16 +403,14 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p03.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 45 
+Final value: 28 
 
 Successful plans:
-Value: 45
- experiments/run1/plans/llm_ic_pddl/p03.plan 45 
+Value: 28
+ experiments/run1/plans/llm_ic_pddl/p03.plan 28 
 
 
 $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p04.pddl experiments/run1/plans/llm_ic_pddl/p04.plan
@@ -621,11 +616,11 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 Checking plan: experiments/run1/plans/llm_ic_pddl/p04.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 49 
+Final value: 32 
 
 Successful plans:
-Value: 49
- experiments/run1/plans/llm_ic_pddl/p04.plan 49 
+Value: 32
+ experiments/run1/plans/llm_ic_pddl/p04.plan 32 
 
 
 $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p05.pddl experiments/run1/plans/llm_ic_pddl/p05.plan
@@ -835,16 +830,14 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p05.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 67 
+Final value: 10 
 
 Successful plans:
-Value: 67
- experiments/run1/plans/llm_ic_pddl/p05.plan 67 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p05.plan 10 
 
 
 $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p06.pddl experiments/run1/plans/llm_ic_pddl/p06.plan
@@ -1054,15 +1047,13 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p06.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 65 
+Final value: 10 
 
 Successful plans:
-Value: 65
- experiments/run1/plans/llm_ic_pddl/p06.plan 65 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p06.plan 10 
 
 

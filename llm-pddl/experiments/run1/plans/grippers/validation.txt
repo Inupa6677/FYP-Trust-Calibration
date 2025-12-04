@@ -52,14 +52,17 @@ $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/l
 
 
 
+
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p02.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 7 
+Final value: 13 
 
 Successful plans:
-Value: 7
- experiments/run1/plans/llm_ic_pddl/p02.plan 7 
+Value: 13
+ experiments/run1/plans/llm_ic_pddl/p02.plan 13 
 
 
 $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p03.pddl experiments/run1/plans/llm_ic_pddl/p03.plan
@@ -110,14 +113,23 @@ $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/l
 
 
 
+
+
+
+
+
+
+
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p03.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 0 
+Final value: 13 
 
 Successful plans:
-Value: 0
- experiments/run1/plans/llm_ic_pddl/p03.plan 0 
+Value: 13
+ experiments/run1/plans/llm_ic_pddl/p03.plan 13 
 
 
 $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p04.pddl experiments/run1/plans/llm_ic_pddl/p04.plan
@@ -175,14 +187,16 @@ $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/l
 
 
 
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p04.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 3 
+Final value: 13 
 
 Successful plans:
-Value: 3
- experiments/run1/plans/llm_ic_pddl/p04.plan 3 
+Value: 13
+ experiments/run1/plans/llm_ic_pddl/p04.plan 13 
 
 
 $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p07.pddl experiments/run1/plans/llm_ic_pddl/p07.plan
@@ -239,14 +253,17 @@ $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/l
 
 
 
+
+
+
 Checking plan: experiments/run1/plans/llm_ic_pddl/p07.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 10 
+Final value: 13 
 
 Successful plans:
-Value: 10
- experiments/run1/plans/llm_ic_pddl/p07.plan 10 
+Value: 13
+ experiments/run1/plans/llm_ic_pddl/p07.plan 13 
 
 
 $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/llm_ic_pddl/p08.pddl experiments/run1/plans/llm_ic_pddl/p08.plan
@@ -309,10 +326,10 @@ $ ./downward/validate ./domains/grippers/domain.pddl experiments/run1/problems/l
 Checking plan: experiments/run1/plans/llm_ic_pddl/p08.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 11 
+Final value: 13 
 
 Successful plans:
-Value: 11
- experiments/run1/plans/llm_ic_pddl/p08.plan 11 
+Value: 13
+ experiments/run1/plans/llm_ic_pddl/p08.plan 13 
 
 

@@ -452,16 +452,14 @@ $ ./downward/validate ./domains/storage/domain.pddl experiments/run1/problems/ll
 
 
 
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p06.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 14 
+Final value: 12 
 
 Successful plans:
-Value: 14
- experiments/run1/plans/llm_ic_pddl/p06.plan 14 
+Value: 12
+ experiments/run1/plans/llm_ic_pddl/p06.plan 12 
 
 
 $ ./downward/validate ./domains/storage/domain.pddl experiments/run1/problems/llm_ic_pddl/p07.pddl experiments/run1/plans/llm_ic_pddl/p07.plan

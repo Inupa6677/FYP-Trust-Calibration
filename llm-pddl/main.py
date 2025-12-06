@@ -355,7 +355,7 @@ class Planner:
         print("[INFO] Using Ollama locally...")
         try:
             result = ollama.generate(
-                model="mistral:latest",
+                model="qwen2.5:7b-instruct",
                 prompt=prompt_text,
                 options={"temperature": 0.2, "top_p": 0.2, "num_ctx": 4096}
             )

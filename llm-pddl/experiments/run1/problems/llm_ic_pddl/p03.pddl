@@ -1,42 +1,31 @@
-(define (problem prob)
- (:domain barman)
- (:objects 
-   shaker1 - shaker
-   left right - hand
-   shot1 shot2 shot3 - shot
-   ingredient1 ingredient2 ingredient3 - ingredient
-   cocktail1 - cocktail
-   dispenser1 dispenser2 dispenser3 - dispenser
-   l0 l1 l2 - level
+(define (problem gripper-2-4-6)
+(:domain gripper-strips)
+(:objects robot1 robot2 - robot
+rgripper1 lgripper1 rgripper2 lgripper2 - gripper
+room1 room2 room3 room4 - room
+ball1 ball2 ball3 ball4 ball5 ball6 - object)
+(:init
+(at-robby robot1 room2)
+(free robot1 rgripper1)
+(free robot1 lgripper1)
+(at-robby robot2 room3)
+(free robot2 rgripper2)
+(free robot2 lgripper2)
+(at ball1 room3)
+(at ball2 room1)
+(at ball3 room3)
+(at ball4 room2)
+(at ball5 room4)
+(at ball6 room4)
 )
- (:init 
-   (ontable shaker1)
-   (ontable shot1)
-   (ontable shot2)
-   (ontable shot3)
-   (dispenses dispenser1 ingredient1)
-   (dispenses dispenser2 ingredient2)
-   (dispenses dispenser3 ingredient3)
-   (clean shaker1)
-   (clean shot1)
-   (clean shot2)
-   (clean shot3)
-   (empty shaker1)
-   (empty shot1)
-   (empty shot2)
-   (empty shot3)
-   (handempty left)
-   (handempty right)
-   (shaker-empty-level shaker1 l0)
-   (shaker-level shaker1 l0)
-   (next l0 l1)
-   (next l1 l2)
-   (cocktail-part1 cocktail1 ingredient3)
-   (cocktail-part2 cocktail1 ingredient1)
+(:goal
+(and
+(at ball1 room4)
+(at ball2 room1)
+(at ball3 room1)
+(at ball4 room2)
+(at ball5 room1)
+(at ball6 room1)
 )
- (:goal 
-   (and
-      (contains shot1 cocktail1)
-)))
-
-Note: The `define` block is the definition of the problem, and it must start with `(define (problem`. The rest of the output is the fully structured PDDL problem file.))
+)
+)

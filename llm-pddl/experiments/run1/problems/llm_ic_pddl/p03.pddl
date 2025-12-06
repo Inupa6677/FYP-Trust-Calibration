@@ -1,32 +1,42 @@
-(define (problem storage-10)
-(:domain Storage-Propositional)
-(:objects
-	depot48-1-1 depot48-1-2 depot48-1-3 - storearea
-	hoist0 hoist1 hoist2 - hoist
-	crate0 crate1 - crate
-	container0 - container
-	depot48 - depot
-	loadarea - transitarea)
+(define (problem prob)
+ (:domain barman)
+ (:objects 
+   shaker1 - shaker
+   left right - hand
+   shot1 shot2 shot3 - shot
+   ingredient1 ingredient2 ingredient3 - ingredient
+   cocktail1 - cocktail
+   dispenser1 dispenser2 dispenser3 - dispenser
+   l0 l1 l2 - level
+)
+ (:init 
+   (ontable shaker1)
+   (ontable shot1)
+   (ontable shot2)
+   (ontable shot3)
+   (dispenses dispenser1 ingredient1)
+   (dispenses dispenser2 ingredient2)
+   (dispenses dispenser3 ingredient3)
+   (clean shaker1)
+   (clean shot1)
+   (clean shot2)
+   (clean shot3)
+   (empty shaker1)
+   (empty shot1)
+   (empty shot2)
+   (empty shot3)
+   (handempty left)
+   (handempty right)
+   (shaker-empty-level shaker1 l0)
+   (shaker-level shaker1 l0)
+   (next l0 l1)
+   (next l1 l2)
+   (cocktail-part1 cocktail1 ingredient3)
+   (cocktail-part2 cocktail1 ingredient1)
+)
+ (:goal 
+   (and
+      (contains shot1 cocktail1)
+)))
 
-(:init
-	(connected depot48-1-1 depot48-1-2)
-	(connected depot48-1-2 depot48-1-3)
-	(in depot48-1-1 depot48)
-	(in depot48-1-2 depot48)
-	(in depot48-1-3 depot48)
-	(on crate0 container0)
-	(on crate1 container0)
-	(in crate0 container0)
-	(in crate1 container0)
-	(connected loadarea container0) 
-	(connected container0 loadarea)
-	(at hoist0 depot48-1-2)
-	(available hoist0)
-	(at hoist1 depot48-1-1)
-	(available hoist1)
-	(at hoist2 depot48-1-3)
-	(available hoist2))
-
-(:goal (and
-	(in crate0 depot48)
-	(in crate1 depot48))))
+Note: The `define` block is the definition of the problem, and it must start with `(define (problem`. The rest of the output is the fully structured PDDL problem file.))

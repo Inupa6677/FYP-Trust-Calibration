@@ -1,4 +1,4 @@
-$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p02.pddl experiments/run1/plans/llm_ic_pddl/p02.plan
+$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p01.pddl experiments/run1/plans/llm_ic_pddl/p01.plan
 
 
 
@@ -178,7 +178,32 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-Type problem in problem specification!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p01.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 45 
+
+Successful plans:
+Value: 45
+ experiments/run1/plans/llm_ic_pddl/p01.plan 45 
+
 
 $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p03.pddl experiments/run1/plans/llm_ic_pddl/p03.plan
 
@@ -356,7 +381,37 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-Type problem in problem specification!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p03.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 28 
+
+Successful plans:
+Value: 28
+ experiments/run1/plans/llm_ic_pddl/p03.plan 28 
+
 
 $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p04.pddl experiments/run1/plans/llm_ic_pddl/p04.plan
 
@@ -542,9 +597,7 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-Type problem in problem specification!
 
-$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p07.pddl experiments/run1/plans/llm_ic_pddl/p07.plan
 
 
 
@@ -560,9 +613,17 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
+Checking plan: experiments/run1/plans/llm_ic_pddl/p04.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 32 
 
+Successful plans:
+Value: 32
+ experiments/run1/plans/llm_ic_pddl/p04.plan 32 
 
 
+$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p05.pddl experiments/run1/plans/llm_ic_pddl/p05.plan
 
 
 
@@ -726,9 +787,7 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-Type problem in problem specification!
 
-$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p08.pddl experiments/run1/plans/llm_ic_pddl/p08.plan
 
 
 
@@ -771,9 +830,17 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
+Checking plan: experiments/run1/plans/llm_ic_pddl/p05.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10 
 
+Successful plans:
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p05.plan 10 
 
 
+$ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm_ic_pddl/p06.pddl experiments/run1/plans/llm_ic_pddl/p06.plan
 
 
 
@@ -914,5 +981,79 @@ $ ./downward/validate ./domains/barman/domain.pddl experiments/run1/problems/llm
 
 
 
-Type problem in problem specification!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Checking plan: experiments/run1/plans/llm_ic_pddl/p06.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10 
+
+Successful plans:
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p06.plan 10 
+
 

@@ -355,9 +355,9 @@ class Planner:
         print("[INFO] Using Ollama locally...")
         try:
             result = ollama.generate(
-                model="llama2:7b",
+                model="mistral:latest",
                 prompt=prompt_text,
-                options={"temperature": 0.2, "top_p": 0.2, "num_ctx": 4096}
+                options={"temperature": 0.3, "top_p": 0.2, "num_ctx": 4096}
             )
             return result['response'].strip()
         except Exception as e:

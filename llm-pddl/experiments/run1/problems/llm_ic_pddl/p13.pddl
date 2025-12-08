@@ -1,8 +1,7 @@
-(define (problem BW-rand-9)
+(define (problem blocksworld-task)
 (:domain blocksworld-4ops)
-(:objects b1 b2 b3 b4 b5 b6 b7 b8 b9)
+(:objects b1 b2 b3 b4 b5 b6 b7 b8 b9 - block )
 (:init
-(arm-empty)
 (on b5 b2)
 (on b2 b3)
 (on b3 b1)
@@ -13,7 +12,8 @@
 (on-table b4)
 (on-table b7)
 (clear b7)
-(clear b8))
+(clear b8)
+(arm-empty))
 (:goal
 (and
 (on b2 b5)

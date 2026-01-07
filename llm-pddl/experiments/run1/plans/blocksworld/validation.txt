@@ -46,21 +46,17 @@ $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problem
 
 
 
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p05.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 8 
+Final value: 10 
 
 Successful plans:
-Value: 8
- experiments/run1/plans/llm_ic_pddl/p05.plan 8 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p05.plan 10 
 
 
-$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p12.pddl experiments/run1/plans/llm_ic_pddl/p12.plan
-
-
-
+$ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p08.pddl experiments/run1/plans/llm_ic_pddl/p08.plan
 
 
 
@@ -108,20 +104,14 @@ $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problem
 
 
 
-
-
-
-
-
-
-Checking plan: experiments/run1/plans/llm_ic_pddl/p12.plan
+Checking plan: experiments/run1/plans/llm_ic_pddl/p08.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 40 
+Final value: 10 
 
 Successful plans:
-Value: 40
- experiments/run1/plans/llm_ic_pddl/p12.plan 40 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p08.plan 10 
 
 
 $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p13.pddl experiments/run1/plans/llm_ic_pddl/p13.plan
@@ -172,22 +162,14 @@ $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problem
 
 
 
-
-
-
-
-
-
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p13.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 32 
+Final value: 10 
 
 Successful plans:
-Value: 32
- experiments/run1/plans/llm_ic_pddl/p13.plan 32 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p13.plan 10 
 
 
 $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problems/llm_ic_pddl/p18.pddl experiments/run1/plans/llm_ic_pddl/p18.plan
@@ -238,26 +220,13 @@ $ ./downward/validate ./domains/blocksworld/domain.pddl experiments/run1/problem
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Checking plan: experiments/run1/plans/llm_ic_pddl/p18.plan
 Plan executed successfully - checking goal
 Plan valid
-Final value: 30 
+Final value: 10 
 
 Successful plans:
-Value: 30
- experiments/run1/plans/llm_ic_pddl/p18.plan 30 
+Value: 10
+ experiments/run1/plans/llm_ic_pddl/p18.plan 10 
 
 

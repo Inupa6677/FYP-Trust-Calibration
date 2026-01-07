@@ -357,7 +357,7 @@ class Planner:
             result = ollama.generate(
                 model="qwen2.5:7b-instruct",
                 prompt=prompt_text,
-                options={"temperature": 0.3, "top_p": 0.2, "num_ctx": 4096}
+                options={"temperature": 0.4, "top_p": 0.2, "num_ctx": 4096}
             )
             return result['response'].strip()
         except Exception as e:

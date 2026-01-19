@@ -20,7 +20,7 @@ Experiments are conducted across multiple planning domains, language models, and
 ## Features
 
 - **Hybrid Evaluation Framework**: Combines LLM plan generation with classical AI planning validation
-- **Multiple Planning Methods**: Support for various prompting strategies (LLM, LLM+PDDL, LLM+IC, LLM+IC+PDDL)
+- **In-Context Learning with PDDL**: Uses few-shot prompting with domain knowledge for plan generation
 - **Temperature Benchmarking**: Systematic evaluation across temperature range 0.0-1.0
 - **Automated Plan Validation**: Formal validation using VAL validator
 - **Optimal Gap Analysis**: Plan quality comparison against optimal solutions from Fast Downward
@@ -35,9 +35,7 @@ Experiments are conducted across multiple planning domains, language models, and
 | **Floortile** | Robot floor painting with color patterns |
 | **Grippers** | Multi-gripper object transportation |
 | **Storage** | Warehouse crate organization |
-| **Termes** | 3D block structure construction |
-| **Tyreworld** | Vehicle tyre changing operations |
-| **Manipulation** | Object manipulation tasks |
+
 
 ---
 
@@ -136,7 +134,6 @@ llm-pddl/
 ├── main.py                      # Main pipeline orchestration
 ├── validate_plans.py            # Plan validation using VAL
 ├── test_optimal_gap.py          # Optimal gap calculation
-├── convert_plan_to_language.py  # Plan to natural language conversion
 ├── run.sh                       # Batch execution script
 ├── domains/                     # Planning domains
 │   ├── barman/
@@ -150,10 +147,7 @@ llm-pddl/
 │   ├── blocksworld/
 │   ├── floortile/
 │   ├── grippers/
-│   ├── storage/
-│   ├── termes/
-│   ├── tyreworld/
-│   └── manipulation/
+│   └── storage/
 ├── downward/                    # Fast Downward planner
 │   ├── fast-downward.py         # Main planner script
 │   ├── builds/                  # Compiled binaries
@@ -164,12 +158,8 @@ llm-pddl/
 │           └── blocksworld/
 │               ├── *.plan       # Generated plans
 │               └── *.nl         # Natural language descriptions
-├── prompts/                     # Prompt templates
-│   ├── llm/                     # Basic LLM prompts
-│   ├── llm_pddl/                # LLM + PDDL prompts
-│   ├── llm_ic/                  # LLM + In-Context prompts
-│   └── llm_ic_pddl/             # LLM + IC + PDDL prompts
-└── keys/                        # Configuration files
+└── prompts/                     # Prompt templates
+    └── llm_ic_pddl/             # LLM + IC + PDDL prompts
 ```
 
 ---
@@ -180,15 +170,14 @@ llm-pddl/
 
 #### Basic Command Structure
 ```bash
-python main.py --domain DOMAIN --method METHOD --run RUN_ID [OPTIONS]
+python main.py --domain DOMAIN --run RUN_ID [OPTIONS]
 ```
 
 #### Command Line Arguments
 
 | Argument | Description | Options |
 |----------|-------------|---------|
-| `--domain` | Planning domain | `barman`, `blocksworld`, `floortile`, `grippers`, `storage`, `termes`, `tyreworld`, `manipulation` |
-| `--method` | Planning method | `llm`, `llm_pddl`, `llm_ic`, `llm_ic_pddl` |
+| `--domain` | Planning domain | `barman`, `blocksworld`, `floortile`, `grippers`, `storage` |
 | `--run` | Experiment run identifier | Any string (e.g., `run1`, `run2`) |
 | `--pnum` | Problem numbers | Comma-separated (e.g., `1,2,3,4,5`) |
 | `--temp` | Temperature values | Comma-separated (e.g., `0.0,0.2,0.4`) |
@@ -197,16 +186,16 @@ python main.py --domain DOMAIN --method METHOD --run RUN_ID [OPTIONS]
 
 ```bash
 # Run single domain with default settings
-python main.py --domain blocksworld --method llm_ic_pddl --run run1
+python main.py --domain blocksworld --run run1
 
 # Run with specific temperatures
-python main.py --domain barman --method llm_ic_pddl --run run1 --temp 0.0,0.2,0.4,0.6,0.8,1.0
+python main.py --domain barman --run run1 --temp 0.0,0.2,0.4,0.6,0.8,1.0
 
 # Run specific problems only
-python main.py --domain blocksworld --method llm_ic_pddl --run run1 --pnum 1,2,3
+python main.py --domain blocksworld --run run1 --pnum 1,2,3
 
 # Full benchmark run (5 problems × 11 temperatures)
-python main.py --domain blocksworld --method llm_ic_pddl --run run1 --pnum 1,2,3,4,5 --temp 0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0
+python main.py --domain blocksworld --run run1 --pnum 1,2,3,4,5 --temp 0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0
 ```
 
 ### Validating Generated Plans
@@ -234,31 +223,17 @@ python test_optimal_gap.py --domain blocksworld --run run1
 - Value of **1.0** = Optimal plan
 - Value of **1.5** = Plan is 50% longer than optimal
 
-### Converting Plans to Natural Language
-
-Generate human-readable plan descriptions:
-
-```bash
-python convert_plan_to_language.py --domain blocksworld --run run1
-```
-
 ---
 
-## Planning Methods Explained
+## Planning Method
 
-| Method | Prompt Components | Description |
-|--------|-------------------|-------------|
-| `llm` | NL problem only | Direct natural language prompting |
-| `llm_pddl` | NL + Domain PDDL + Problem PDDL | PDDL context provided |
-| `llm_ic` | NL + Example problem + Example solution | Few-shot learning |
-| `llm_ic_pddl` | NL + PDDL + Example (full context) | **Best performance** |
+This framework uses the **LLM+IC+PDDL** prompting strategy, which provides the LLM with:
 
-### Recommended Method
+1. **Domain Knowledge**: PDDL domain specification with available actions and predicates
+2. **Problem Specification**: Natural language description and PDDL problem definition
+3. **Few-Shot Examples**: Example problem-solution pairs for in-context learning
 
-For research purposes, use **`llm_ic_pddl`** as it provides the LLM with:
-1. Domain knowledge (PDDL)
-2. Problem specification (NL + PDDL)
-3. Learning examples (few-shot)
+This approach combines structured domain knowledge with few-shot learning to guide the LLM in generating valid PDDL problem specifications.
 
 ---
 

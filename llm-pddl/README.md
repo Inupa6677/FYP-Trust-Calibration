@@ -1,22 +1,22 @@
-# LLM-PDDL: Evaluating Large Language Models for Automated Planning
+# LLM-PDDL: Trust Calibration in LLM-Assisted Workflow Planning
 
 ## Overview
 
-This repository contains the experimental framework for evaluating Large Language Models (LLMs) in generating PDDL (Planning Domain Definition Language) plans. This project is an extension of the LLM+P framework, adapted for research on **Trust Calibration in LLM-Assisted Workflow Planning**.
+This repository contains the experimental framework developed for research on **Trust Calibration in LLM-Assisted Workflow Planning**. The system evaluates Large Language Models (LLMs) in generating PDDL (Planning Domain Definition Language) plans, providing a comprehensive pipeline for plan generation, validation, and quality assessment.
 
 ### Research Objectives
 
 1. **RQ1**: How effectively can LLMs generate valid and optimal PDDL plans across different planning domains?
 2. **RQ2**: How do domain experts perceive and evaluate LLM-generated plans? (Human-centric trust calibration)
 
-### Key Modifications from Original LLM+P
+### Key Contributions
 
-- Replaced OpenAI API with **Ollama** for local LLM inference
-- Added support for multiple open-source models (Qwen, LLaMA, Mistral)
-- Implemented **temperature benchmarking** (0.0-1.0 range)
-- Added **plan validation** using VAL validator
-- Added **optimal gap calculation** for plan quality assessment
-- Added **natural language conversion** for generated plans
+- **Local LLM Inference**: Utilizes Ollama for privacy-preserving, local model deployment
+- **Multi-Model Evaluation**: Supports multiple open-source models (Qwen 2.5, LLaMA 2, Mistral)
+- **Temperature Benchmarking**: Systematic evaluation across temperature range (0.0-1.0)
+- **Automated Plan Validation**: Integration with VAL validator for correctness verification
+- **Optimal Gap Analysis**: Plan quality assessment against classical planner baselines
+- **Natural Language Conversion**: Human-readable plan generation for expert evaluation
 
 ---
 
@@ -172,7 +172,7 @@ llm-pddl/
 │   ├── llm_pddl/                # LLM + PDDL prompts
 │   ├── llm_ic/                  # LLM + In-Context prompts
 │   └── llm_ic_pddl/             # LLM + IC + PDDL prompts
-└── keys/                        # API keys (legacy)
+└── keys/                        # Configuration files
 ```
 
 ---
@@ -371,31 +371,23 @@ experiments/run1/llm_ic_pddl/blocksworld/
 └── optimal_gap.txt         # Quality metrics
 ```
 
----
-
-## Original LLM+P Citation
-
-This project is based on the LLM+P framework. Please cite the original work:
-
-```bibtex
-@article{liu2023llmp,
-  title={LLM+P: Empowering Large Language Models with Optimal Planning Proficiency},
-  author={Liu, Bo and Jiang, Yuqian and Zhang, Xiaohan and Liu, Qiang and Zhang, Shiqi and Biswas, Joydeep and Stone, Peter},
-  journal={arXiv preprint arXiv:2304.11477},
-  year={2023}
-}
-```
-
----
 
 ## License
 
-- Fast Downward: GPL-3.0
-- VAL: Included with attribution
-- This extension: Research use
+This project is developed for academic research purposes.
+
+**Third-Party Components**:
+- Fast Downward: GPL-3.0 License
+- VAL Validator: Included with attribution
+
+---
+
+## Acknowledgments
+
+This research was conducted as part of a Final Year Project on Trust Calibration in LLM-Assisted Workflow Planning.
 
 ---
 
 ## Contact
 
-For questions or issues regarding this extension, please open a GitHub issue.
+For questions or issues, please open a GitHub issue or contact the repository maintainers.

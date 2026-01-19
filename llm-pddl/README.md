@@ -170,7 +170,7 @@ llm-pddl/
 
 #### Basic Command Structure
 ```bash
-python main.py --domain DOMAIN --run RUN_ID [OPTIONS]
+python main.py --domain DOMAIN --method llm_ic_pddl --run RUN_ID [OPTIONS]
 ```
 
 #### Command Line Arguments
@@ -178,6 +178,7 @@ python main.py --domain DOMAIN --run RUN_ID [OPTIONS]
 | Argument | Description | Options |
 |----------|-------------|---------|
 | `--domain` | Planning domain | `barman`, `blocksworld`, `floortile`, `grippers`, `storage` |
+| `--method` | Planning method | `llm_ic_pddl` (fixed for this research) |
 | `--run` | Experiment run identifier | Any string (e.g., `run1`, `run2`) |
 | `--pnum` | Problem numbers | Comma-separated (e.g., `1,2,3,4,5`) |
 | `--temp` | Temperature values | Comma-separated (e.g., `0.0,0.2,0.4`) |
@@ -186,16 +187,16 @@ python main.py --domain DOMAIN --run RUN_ID [OPTIONS]
 
 ```bash
 # Run single domain with default settings
-python main.py --domain blocksworld --run run1
+python main.py --domain blocksworld --method llm_ic_pddl --run run1
 
 # Run with specific temperatures
-python main.py --domain barman --run run1 --temp 0.0,0.2,0.4,0.6,0.8,1.0
+python main.py --domain barman --method llm_ic_pddl --run run1 --temp 0.0,0.2,0.4,0.6,0.8,1.0
 
 # Run specific problems only
-python main.py --domain blocksworld --run run1 --pnum 1,2,3
+python main.py --domain blocksworld --method llm_ic_pddl --run run1 --pnum 1,2,3
 
 # Full benchmark run (5 problems × 11 temperatures)
-python main.py --domain blocksworld --run run1 --pnum 1,2,3,4,5 --temp 0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0
+python main.py --domain blocksworld --method llm_ic_pddl --run run1 --pnum 1,2,3,4,5 --temp 0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0
 ```
 
 ### Validating Generated Plans

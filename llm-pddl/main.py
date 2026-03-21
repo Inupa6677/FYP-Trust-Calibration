@@ -151,8 +151,9 @@ class Manipulation(Domain):
 
 
 class Planner:
-    def __init__(self):
-        pass
+    def __init__(self, model="llama2:7b", temperature=0.9):
+        self.model = model
+        self.temperature = temperature
 
     def load_hf_token(self):
         hf_keys_file = os.path.join(os.getcwd(), "keys/hf_token.txt")
@@ -352,12 +353,12 @@ class Planner:
 
 
     def query(self, prompt_text):
-        print("[INFO] Using Ollama locally...")
+        print(f"[INFO] Using Ollama locally with model={self.model}, temperature={self.temperature}...")
         try:
             result = ollama.generate(
-                model="llama2:7b",
+                model=self.model,
                 prompt=prompt_text,
-                options={"temperature": 0.9, "top_p": 0.2, "num_ctx": 4096}
+                options={"temperature": self.temperature, "top_p": 0.2, "num_ctx": 4096}
             )
             return result['response'].strip()
         except Exception as e:
@@ -368,6 +369,26 @@ class Planner:
     
     def parse_result(self, pddl_string):
         pddl_string = pddl_string.replace("```", "").strip()
+
+        # Find where the PDDL definition actually ends
+        # PDDL starts with (define and should end when parentheses are balanced
+        if pddl_string.startswith("(define"):
+            paren_count = 0
+            pddl_end_index = 0
+            
+            for i, char in enumerate(pddl_string):
+                if char == '(':
+                    paren_count += 1
+                elif char == ')':
+                    paren_count -= 1
+                    if paren_count == 0:
+                        # Found the closing parenthesis for (define
+                        pddl_end_index = i + 1
+                        break
+            
+            if pddl_end_index > 0:
+                # Truncate everything after the PDDL definition
+                pddl_string = pddl_string[:pddl_end_index].strip()
 
         # Ensure closing parentheses are balanced
         open_parens = pddl_string.count("(")
@@ -770,14 +791,16 @@ if __name__ == "__main__":
     parser.add_argument('--time-limit', type=int, default=200)
     parser.add_argument('--task', type=int, default=0)
     parser.add_argument('--run', type=int, default=0)
+    parser.add_argument('--model', type=str, default="llama2:7b", help="LLM model to use")
+    parser.add_argument('--temperature', type=float, default=0.9, help="LLM temperature")
     parser.add_argument('--print-prompts', action='store_true')
     args = parser.parse_args()
 
     # 1. initialize problem domain
     domain = eval(args.domain.capitalize())()
 
-    # 2. initialize the planner
-    planner = Planner()
+    # 2. initialize the planner with model and temperature
+    planner = Planner(model=args.model, temperature=args.temperature)
 
     # 3. execute the llm planner
     method = {

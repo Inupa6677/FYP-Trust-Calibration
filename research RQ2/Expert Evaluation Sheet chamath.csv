@@ -1,0 +1,26 @@
+Plan ID,Plan Description,MF (Pass/Fail),INV (Pass/Fail),DIR (Pass/Fail),Trust (1–5),Special note (comment)
+barmen sample 1,LLM-generated barman problem with classical planner plan,Pass,Pass,Fail,4,"One required shot glass is absent, but the plan adapts to complete the task"
+barmen sample 2,LLM-generated barman problem with classical planner plan,Fail ,Fail ,Fail,1,The missing shot glass together with a polluted initial state makes execution impossible
+barmen sample 3,LLM-generated barman problem with classical planner plan,Pass,Pass,Fail,4,Errors in resource assignment and an invalid starting configuration cause failure
+barmen sample 4,LLM-generated barman problem with classical planner plan,Pass,Pass,Fail,4,Lack of a shot glass and mismatched goals block successful completion
+barmen sample 5,LLM-generated barman problem with classical planner plan,Pass,Pass,Fail,4,Serious allocation mistakes combined with completely incorrect goals
+blocksworld sample 1,LLM-generated blocksworld problem with classical planner plan,Pass,Fail ,Fail ,3,"Minor naming issues in objects, though overall functionality is preserved"
+blocksworld sample 2,LLM-generated blocksworld problem with classical planner plan,Pass,Fail ,Fail ,3,"Structural differences from the reference, yet the plan still completes"
+blocksworld sample 3,LLM-generated blocksworld problem with classical planner plan,Pass,Pass,Fail ,4,"Small rearrangements in the blocks, but the intended goals are reached"
+blocksworld sample 4,LLM-generated blocksworld problem with classical planner plan,Pass,Fail ,Fail ,3,Cosmetic formatting variations without changing the meaning
+blocksworld sample 5,LLM-generated blocksworld problem with classical planner plan,Pass,Fail ,Fail ,3,Slight structural edits that do not affect execution
+floortile sample 1,LLM-generated floortile problem with classical planner plan,Pass,Pass,Fail,4,Well-arranged task with no major flaws detected
+floortile sample 2,LLM-generated floortile problem with classical planner plan,Pass,Pass,Fail,4,Clean configuration with accurate robot and tile placement
+floortile sample 3,LLM-generated floortile problem with classical planner plan,Pass,Pass,Fail,3,Initial conditions and goals are correctly defined
+floortile sample 4,LLM-generated floortile problem with classical planner plan,Fail ,Fail,Fail,0,Errors in the goal description stop the process midway
+floortile sample 5,LLM-generated floortile problem with classical planner plan,Fail ,Fail,Fail,0,The plan fails because the goals are only partially described
+grippers sample 1,LLM-generated grippers problem with classical planner plan,Pass,Pass,Fail,4,"Small differences in object counts, but the plan remains valid"
+grippers sample 2,LLM-generated grippers problem with classical planner plan,Fail ,Fail,Fail,1,Light structural changes while keeping full functionality
+grippers sample 3,LLM-generated grippers problem with classical planner plan,Fail ,Fail,Fail,1,"Minor deviations from naming standards, yet goals are satisfied"
+grippers sample 4,LLM-generated grippers problem with classical planner plan,Pass,Pass,Fail,4,Formatting irregularities that do not affect correctness
+grippers sample 5,LLM-generated grippers problem with classical planner plan,Pass,Pass,Pass,5,Negligible differences with a successful outcome
+storage sample 1,LLM-generated storage problem with classical planner plan,Fail ,Fail,Fail,1,Clearly described scenario with proper hoist and crate setup
+storage sample 2,LLM-generated storage problem with classical planner plan,Fail ,Fail,Fail,1,Well-presented layout without accurate goal statements
+storage sample 3,LLM-generated storage problem with classical planner plan,Fail ,Fail,Fail,1,incorrect object placement with a clear route to success
+storage sample 4,LLM-generated storage problem with classical planner plan,Fail ,Fail,Fail,1,Storage actions and targets are not properly specified
+storage sample 5,LLM-generated storage problem with classical planner plan,Fail ,Fail,Fail,1,-

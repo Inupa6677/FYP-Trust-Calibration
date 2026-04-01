@@ -1,0 +1,26 @@
+Plan ID,Plan Description,MF (Pass/Fail),INV (Pass/Fail),DIR (Pass/Fail),Trust (1–5),Special note (comment)
+barmen sample 1,LLM-generated barman problem with classical planner plan,Pass,Pass,Pass,5,"One shot glass is missing (need 4, have 3), but the plan compensates for it."
+barmen sample 2,LLM-generated barman problem with classical planner plan,Fail,Fail,Fail,1,Missing a shot glass plus a corrupted starting state with pre mixed cocktails makes the plan fail.
+barmen sample 3,LLM-generated barman problem with classical planner plan,Fail,Fail,Fail,2,Allocation issues and an invalid initial setup due to already existing cocktails.
+barmen sample 4,LLM-generated barman problem with classical planner plan,Fail,Fail,Fail,2,A missing shot glass and incorrectly defined goals stop the plan from succeeding.
+barmen sample 5,LLM-generated barman problem with classical planner plan,Fail,Fail,Fail,1,Major allocation failures combined with goals that don’t match at all.
+blocksworld sample 1,LLM-generated blocksworld problem with classical planner plan,Fail,Fail,Fail,2,"Small inconsistencies in object names, but it still works correctly."
+blocksworld sample 2,LLM-generated blocksworld problem with classical planner plan,Pass,Pass,Pass,4,"Slight differences from the reference structure, yet the plan runs successfully."
+blocksworld sample 3,LLM-generated blocksworld problem with classical planner plan,Pass,Pass,Pass,4,"Minor changes in block arrangement, but the objectives are still met."
+blocksworld sample 4,LLM-generated blocksworld problem with classical planner plan,Pass,Pass,Pass,4,"Small formatting changes, but the meaning remains correct."
+blocksworld sample 5,LLM-generated blocksworld problem with classical planner plan,Pass,Pass,Pass,5,Very minor structural changes with successful execution.
+floortile sample 1,LLM-generated floortile problem with classical planner plan,Fail,Fail,Fail,1,Nicely organized task with no notable problems.
+floortile sample 2,LLM-generated floortile problem with classical planner plan,Pass,Pass,Fail,3,Neat setup with correct tile and robot placement.
+floortile sample 3,LLM-generated floortile problem with classical planner plan,Pass,Pass,Fail,3,Goals and initial state are defined correctly.
+floortile sample 4,LLM-generated floortile problem with classical planner plan,Fail,Fail,Fail,1,Incorrect goal definitions prevent full execution.
+floortile sample 5,LLM-generated floortile problem with classical planner plan,Fail,Fail,Fail,1,Execution fails because the goals are not fully specified.
+grippers sample 1,LLM-generated grippers problem with classical planner plan,Fail,Fail,Fail,2,"Minor differences in object quantities, but the plan still succeeds."
+grippers sample 2,LLM-generated grippers problem with classical planner plan,Fail,Fail,Fail,1,Small structural deviations while preserving correct functionality.
+grippers sample 3,LLM-generated grippers problem with classical planner plan,Fail,Fail,Fail,2,"Slight departures from naming conventions, but goals are still achieved."
+grippers sample 4,LLM-generated grippers problem with classical planner plan,Pass,Pass,Pass,5,"Minor formatting quirks, but the content is semantically correct."
+grippers sample 5,LLM-generated grippers problem with classical planner plan,Pass,Pass,Pass,4,Trivial differences with successful execution.
+storage sample 1,LLM-generated storage problem with classical planner plan,Fail,Fail,Fail,1,Clearly specified task with correct hoist and crate details.
+storage sample 2,LLM-generated storage problem with classical planner plan,Fail,Fail,Fail,1,Cleanly laid out with correct goal statements.
+storage sample 3,LLM-generated storage problem with classical planner plan,Fail,Fail,Fail,1,Proper object setup with a straightforward path to completion.
+storage sample 4,LLM-generated storage problem with classical planner plan,Fail,Fail,Fail,1,Storage steps and goals are defined correctly.
+storage sample 5,LLM-generated storage problem with classical planner plan,Fail,Fail,Fail,1,Well formed task that executes successfully end-to-end.

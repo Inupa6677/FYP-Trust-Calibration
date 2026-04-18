@@ -683,42 +683,19 @@ git push origin feature/your-feature-name
 - 📚 **Documentation** - Expand guides and examples
 - 🌍 **New Domains** - Add support for new planning domains
 
-### Code Style
-
-- Python: Follow PEP 8
-- JavaScript: Use ESLint (configured in project)
-- Documentation: Clear, concise, with examples
 
 ---
 
-## 📄 License
-
-This project is part of academic research. Please see [LICENSE](LICENSE) for details.
 
 ---
 
-## 📚 References & Citation
-
-If you use this framework in your research, please cite:
-
-```bibtex
-@article{llm-pddl,
-  title={Classical Planning Meets Large Language Models: 
-          An Automated Evaluation Framework for Workflow Plans},
-  author={Your Research Team},
-  journal={Conference/Journal Name},
-  year={2024}
-}
 ```
 
 ---
 
 ## 📞 Support & Contact
 
-- 📧 **Email**: [your-email@domain.com]
-- 🐛 **Issues**: GitHub Issues (link to repo)
-- 💬 **Discussions**: GitHub Discussions
-- 📖 **Documentation**: See `/docs` directory
+- 📧 **Email**: [inupa001@gmail.com]
 
 ---
 
@@ -732,8 +709,6 @@ If you use this framework in your research, please cite:
 ---
 
 <div align="center">
-
-### Made with ❤️ for the AI Planning Community
 
 **⭐ If you find this useful, please star the repository! ⭐**
 
